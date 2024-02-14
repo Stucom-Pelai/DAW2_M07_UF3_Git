@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-/**
+
+**
  * Represents play field.
  */
 class Coach extends Person
@@ -17,9 +18,11 @@ class Coach extends Person
     /**
      * Coach Status
      *
+
      * @var boolean
      */
     private $active;
+
 
     /**
      * Construct a Coach with a name and the status.
