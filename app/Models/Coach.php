@@ -3,9 +3,9 @@
 namespace App\Models;
 
 
-**
- * Represents play field.
- */
+// **
+//  * Represents play field.
+//  */
 class Coach extends Person
 {
     /**
@@ -23,14 +23,12 @@ class Coach extends Person
      */
     private $active;
 
-    
     /**
-     * Coach Motivation
+     * Coach team
      *
-
-     * @var boolean
+     * @var string
      */
-    private $motivation;
+    private $team;
 
 
     /**
@@ -38,14 +36,12 @@ class Coach extends Person
      *
      * @param string    $name     Coach name
      * @param bool $active  Coach Status
-     * @param bool $motivation  Coach Motivation
-
      */
-    public function __construct(string $name, bool $active ,bool $motivation)
+    public function __construct(string $name, bool $active, string $team)
     {
         $this->name = $name;
         $this->active = $active;
-        $this->motivation = $motivation;
+        $this->team = $team;
     }
     /**
      * Get Coach name
@@ -65,14 +61,15 @@ class Coach extends Person
     {
         return $this->active;
     }
-        /**
-     * Get Coach Motivation
+
+    /**
+     * Get Coach team
      *
-     * @return  bool
+     * @return  string
      */
-    public function getMotivate()
+    public function getTeam()
     {
-        return $this->motivation;
+        return $this->team;
     }
 
     /**
@@ -101,19 +98,26 @@ class Coach extends Person
 
         return $this;
     }
-        /**
-     * Set Motivation in bool
+
+    /**
+     * Set Coach team in string
      *
-     * @param  bool  $Motivation is true or false
+     * @param  string  $team is string
      *
      * @return  self
      */
-    public function setMotivate(bool $motivation)
+    public function setTeam(string $team)
     {
-        $this->motivation = $motivation;
+        $this->team = $team;
 
         return $this;
     }
+
+    function presentation()
+    {
+        echo "Hi my name is {$this->name} and my team is {$this->team}";
+    }
+
     function train()
     {
         echo "{$this->name} says: Come on Team lets go train!!!!!";
