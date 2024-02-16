@@ -9,26 +9,29 @@ namespace App\Models;
 class Player extends Person
 {
     /**
-     * Coach name
+
+     * Player name
+
      *
      * @var string
      */
     private $name;
 
     /**
-     * Coach Status
+     * Player Status
      *
-
      * @var boolean
      */
     private $active;
 
-
     /**
-     * Construct a Coach with a name and the status.
+     * Construct a Player with a name and the status.
      *
-     * @param string    $name     Coach name
-     * @param bool $active  Coach Status
+     * @param string    $name     Player name
+     * @param bool $active  Player Status
+     * @param bool $motivation  Player Motivation
+
+
      */
     public function __construct(string $name, bool $active)
     {
@@ -36,7 +39,7 @@ class Player extends Person
         $this->active = $active;
     }
     /**
-     * Get Coach name
+     * Get Player name
      *
      * @return  string
      */
@@ -45,7 +48,7 @@ class Player extends Person
         return $this->name;
     }
     /**
-     * Get Coach Status
+     * Get Player Status
      *
      * @return  bool
      */
@@ -55,7 +58,15 @@ class Player extends Person
     }
 
     /**
-     * Set Coach name in string
+     * Get Player Motivation
+     *
+     * @return  bool
+     */
+
+
+
+    /**
+     * Set Player name in string
      *
      * @param  string  $name is string
      *
@@ -80,8 +91,5 @@ class Player extends Person
 
         return $this;
     }
-    function train()
-    {
-        echo "{$this->name} says: Come on Team lets go train!!!!!";
-    }
+
 }

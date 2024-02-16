@@ -22,8 +22,10 @@ class Coach extends Person
      * @var boolean
      */
     private $active;
-/**
-     * Coach name
+
+
+    /**
+     * Coach tactic
      *
      * @var string
      */
@@ -37,6 +39,7 @@ class Coach extends Person
      * @param bool $active  Coach Status
      * @param string $tactic La nueva táctica a implementar
      */
+
     public function __construct(string $name, bool $active, string $tactic)
     {
         $this->name = $name;
@@ -61,6 +64,7 @@ class Coach extends Person
     {
         return $this->active;
     }
+
     public function getTactic()
     {
         return $this->tactic;
@@ -92,17 +96,18 @@ class Coach extends Person
 
         return $this;
     }
-     /**
+
+    /**
      * Set Coach name in string
      *
      * @param  string  $tactic is string
      *
      * @return  self
      */
-    public function deviseTeamTactic(string $tactic)
-{
-    echo "{$this->name} says: Alright team, our new tactic for the next game will be '{$tactic}'!";
-}
+    public function deviseTeamTactic(string $tactic): void
+    {
+        echo "{$this->name} says: Alright team, our new tactic for the next game will be '{$tactic}'!";
+    }
     function train()
     {
         echo "{$this->name} says: Come on Team lets go train!!!!!";
