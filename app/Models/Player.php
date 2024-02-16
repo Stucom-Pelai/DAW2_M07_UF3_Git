@@ -9,7 +9,9 @@ namespace App\Models;
 class Player extends Person
 {
     /**
+
      * Player name
+
      *
      * @var string
      */
@@ -18,7 +20,6 @@ class Player extends Person
     /**
      * Player Status
      *
-
      * @var boolean
      */
     private $active;
@@ -29,6 +30,7 @@ class Player extends Person
      * @param string    $name     Player name
      * @param bool $active  Player Status
      * @param bool $motivation  Player Motivation
+
 
      */
     public function __construct(string $name, bool $active)
@@ -54,11 +56,14 @@ class Player extends Person
     {
         return $this->active;
     }
+
     /**
      * Get Player Motivation
      *
      * @return  bool
      */
+
+
 
     /**
      * Set Player name in string
