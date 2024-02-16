@@ -6,7 +6,7 @@ namespace App\Models;
 /**
  * Represents play field.
  */
-class Coach extends Person
+class Player extends Person
 {
     /**
      * Coach name
