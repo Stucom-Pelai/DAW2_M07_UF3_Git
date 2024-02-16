@@ -5,7 +5,7 @@ namespace App\Models;
 use Nette\Utils\ArrayList;
 
 /**
- * Represents football match.
+ * Repr
  */
 class Game
 {
