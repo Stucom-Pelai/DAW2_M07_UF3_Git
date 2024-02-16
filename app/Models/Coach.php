@@ -3,9 +3,9 @@
 namespace App\Models;
 
 
-// **
-//  * Represents play field.
-//  */
+**
+ * Represents play field.
+ */
 class Coach extends Person
 {
     /**
@@ -22,13 +22,12 @@ class Coach extends Person
      * @var boolean
      */
     private $active;
-
-    /**
-     * Coach team
+/**
+     * Coach name
      *
      * @var string
      */
-    private $team;
+    private $tactic;
 
 
     /**
@@ -36,12 +35,13 @@ class Coach extends Person
      *
      * @param string    $name     Coach name
      * @param bool $active  Coach Status
+     * @param string $tactic La nueva táctica a implementar
      */
-    public function __construct(string $name, bool $active, string $team)
+    public function __construct(string $name, bool $active, string $tactic)
     {
         $this->name = $name;
         $this->active = $active;
-        $this->team = $team;
+        $this->tactic = $tactic;
     }
     /**
      * Get Coach name
@@ -61,15 +61,9 @@ class Coach extends Person
     {
         return $this->active;
     }
-
-    /**
-     * Get Coach team
-     *
-     * @return  string
-     */
-    public function getTeam()
+    public function getTactic()
     {
-        return $this->team;
+        return $this->tactic;
     }
 
     /**
@@ -98,26 +92,17 @@ class Coach extends Person
 
         return $this;
     }
-
-    /**
-     * Set Coach team in string
+     /**
+     * Set Coach name in string
      *
-     * @param  string  $team is string
+     * @param  string  $tactic is string
      *
      * @return  self
      */
-    public function setTeam(string $team)
-    {
-        $this->team = $team;
-
-        return $this;
-    }
-
-    function presentation()
-    {
-        echo "Hi my name is {$this->name} and my team is {$this->team}";
-    }
-
+    public function deviseTeamTactic(string $tactic)
+{
+    echo "{$this->name} says: Alright team, our new tactic for the next game will be '{$tactic}'!";
+}
     function train()
     {
         echo "{$this->name} says: Come on Team lets go train!!!!!";
