@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-**
+/**
  * Represents play field.
  */
 class Coach extends Person
@@ -23,7 +23,7 @@ class Coach extends Person
      */
     private $active;
 
-    
+
     /**
      * Coach Motivation
      *
@@ -41,7 +41,7 @@ class Coach extends Person
      * @param bool $motivation  Coach Motivation
 
      */
-    public function __construct(string $name, bool $active ,bool $motivation)
+    public function __construct(string $name, bool $active, bool $motivation)
     {
         $this->name = $name;
         $this->active = $active;
@@ -65,7 +65,7 @@ class Coach extends Person
     {
         return $this->active;
     }
-        /**
+    /**
      * Get Coach Motivation
      *
      * @return  bool
@@ -101,7 +101,7 @@ class Coach extends Person
 
         return $this;
     }
-        /**
+    /**
      * Set Motivation in bool
      *
      * @param  bool  $Motivation is true or false
