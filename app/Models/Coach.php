@@ -2,39 +2,86 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
+**
+ * Represents play field.
+ */
 class Coach extends Person
 {
     /**
-     * person active
+     * Coach name
+     *
+     * @var string
+     */
+    private $name;
+
+    /**
+     * Coach Status
+     *
+
      * @var boolean
      */
     private $active;
 
-    
+
     /**
-     * Get active person
-     * @return boolean
+     * Construct a Coach with a name and the status.
+     *
+     * @param string    $name     Coach name
+     * @param bool $active  Coach Status
      */
-    public function getActive(){
+    public function __construct(string $name, bool $active)
+    {
+        $this->name = $name;
+        $this->active = $active;
+    }
+    /**
+     * Get Coach name
+     *
+     * @return  string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * Get Coach Status
+     *
+     * @return  bool
+     */
+    public function getActive()
+    {
         return $this->active;
     }
 
-
     /**
-     * set active of person
-     * @param boolean $active 
-     * @return self
+     * Set Coach name in string
+     *
+     * @param  string  $name is string
+     *
+     * @return  self
      */
-    public function setActive(boolean $active){
-        $this->active = $active;
+    public function setName(string $name)
+    {
+        $this->name = $name;
+
         return $this;
     }
+    /**
+     * Set status in bool
+     *
+     * @param  bool  $active is true or false
+     *
+     * @return  self
+     */
+    public function setActive(bool $active)
+    {
+        $this->active = $active;
 
-    function train(){
-        echo "people training";
+        return $this;
     }
-
+    function train()
+    {
+        echo "{$this->name} says: Come on Team lets go train!!!!!";
+    }
 }
