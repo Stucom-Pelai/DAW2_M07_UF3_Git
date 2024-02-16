@@ -22,15 +22,12 @@ class Coach extends Person
      * @var boolean
      */
     private $active;
-
-    
-    /**
-     * Coach Motivation
+/**
+     * Coach name
      *
-
-     * @var boolean
+     * @var string
      */
-    private $motivation;
+    private $tactic;
 
 
     /**
@@ -38,14 +35,13 @@ class Coach extends Person
      *
      * @param string    $name     Coach name
      * @param bool $active  Coach Status
-     * @param bool $motivation  Coach Motivation
-
+     * @param string $tactic La nueva táctica a implementar
      */
-    public function __construct(string $name, bool $active ,bool $motivation)
+    public function __construct(string $name, bool $active, string $tactic)
     {
         $this->name = $name;
         $this->active = $active;
-        $this->motivation = $motivation;
+        $this->tactic = $tactic;
     }
     /**
      * Get Coach name
@@ -65,14 +61,9 @@ class Coach extends Person
     {
         return $this->active;
     }
-        /**
-     * Get Coach Motivation
-     *
-     * @return  bool
-     */
-    public function getMotivate()
+    public function getTactic()
     {
-        return $this->motivation;
+        return $this->tactic;
     }
 
     /**
@@ -101,19 +92,17 @@ class Coach extends Person
 
         return $this;
     }
-        /**
-     * Set Motivation in bool
+     /**
+     * Set Coach name in string
      *
-     * @param  bool  $Motivation is true or false
+     * @param  string  $tactic is string
      *
      * @return  self
      */
-    public function setMotivate(bool $motivation)
-    {
-        $this->motivation = $motivation;
-
-        return $this;
-    }
+    public function deviseTeamTactic(string $tactic)
+{
+    echo "{$this->name} says: Alright team, our new tactic for the next game will be '{$tactic}'!";
+}
     function train()
     {
         echo "{$this->name} says: Come on Team lets go train!!!!!";
