@@ -23,17 +23,29 @@ class Coach extends Person
      */
     private $active;
 
+    
+    /**
+     * Coach Motivation
+     *
+
+     * @var boolean
+     */
+    private $motivation;
+
 
     /**
      * Construct a Coach with a name and the status.
      *
      * @param string    $name     Coach name
      * @param bool $active  Coach Status
+     * @param bool $motivation  Coach Motivation
+
      */
-    public function __construct(string $name, bool $active)
+    public function __construct(string $name, bool $active ,bool $motivation)
     {
         $this->name = $name;
         $this->active = $active;
+        $this->motivation = $motivation;
     }
     /**
      * Get Coach name
@@ -52,6 +64,15 @@ class Coach extends Person
     public function getActive()
     {
         return $this->active;
+    }
+        /**
+     * Get Coach Motivation
+     *
+     * @return  bool
+     */
+    public function getMotivate()
+    {
+        return $this->motivation;
     }
 
     /**
@@ -77,6 +98,19 @@ class Coach extends Person
     public function setActive(bool $active)
     {
         $this->active = $active;
+
+        return $this;
+    }
+        /**
+     * Set Motivation in bool
+     *
+     * @param  bool  $Motivation is true or false
+     *
+     * @return  self
+     */
+    public function setMotivate(bool $motivation)
+    {
+        $this->motivation = $motivation;
 
         return $this;
     }
